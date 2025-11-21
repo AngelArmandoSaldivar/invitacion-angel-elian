@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐝 Bautizo y cumpleaños de nuestro pequeño abejita 🍯</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Courgette&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --honey-yellow: #FFC107;
+            --honey-dark: #FF9800;
+            --honey-light: #FFECB3;
+            --bee-black: #212121;
+            --bee-white: #FFF9C4;
+            --flower-pink: #F8BBD0;
+            --leaf-green: #C8E6C9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bee-white);
+            color: var(--bee-black);
+            overflow-x: hidden;
+        }
+        
+        .bee-bg {
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 236, 179, 0.3) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 236, 179, 0.3) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(255, 236, 179, 0.2) 0%, transparent 30%);
+            background-color: var(--bee-white);
+        }
+        
+        .honeycomb-bg {
+            background-image: 
+                linear-gradient(30deg, var(--honey-light) 12%, transparent 12.5%, transparent 87%, var(--honey-light) 87.5%, var(--honey-light)),
+                linear-gradient(150deg, var(--honey-light) 12%, transparent 12.5%, transparent 87%, var(--honey-light) 87.5%, var(--honey-light)),
+                linear-gradient(30deg, var(--honey-light) 12%, transparent 12.5%, transparent 87%, var(--honey-light) 87.5%, var(--honey-light)),
+                linear-gradient(150deg, var(--honey-light) 12%, transparent 12.5%, transparent 87%, var(--honey-light) 87.5%, var(--honey-light)),
+                linear-gradient(60deg, rgba(255, 193, 7, 0.1) 25%, transparent 25.5%, transparent 75%, rgba(255, 193, 7, 0.1) 75%, rgba(255, 193, 7, 0.1)),
+                linear-gradient(60deg, rgba(255, 193, 7, 0.1) 25%, transparent 25.5%, transparent 75%, rgba(255, 193, 7, 0.1) 75%, rgba(255, 193, 7, 0.1));
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+        }
+        
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .main-title {
+            font-family: 'Courgette', cursive;
+            font-size: 3.5rem;
+            color: var(--bee-black);
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 0 var(--honey-yellow);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--bee-black);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .foto-principal {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid var(--honey-yellow);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin: 0 auto 2rem;
+            display: block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .foto-principal:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .invitacion-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+            border: 3px dashed var(--honey-yellow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .invitacion-card::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, var(--honey-yellow), var(--honey-light), var(--honey-yellow));
+            z-index: -1;
+            border-radius: 25px;
+            opacity: 0.3;
+        }
+        
+        .section-title {
+            font-family: 'Courgette', cursive;
+            font-size: 2.5rem;
+            color: var(--bee-black);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--honey-yellow);
+            border-radius: 2px;
+        }
+        
+        .evento-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--honey-yellow);
+        }
+        
+        .evento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+        }
+        
+        .evento-icon {
+            font-size: 2.5rem;
+            color: var(--honey-yellow);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .evento-title {
+            font-size: 1.5rem;
+            color: var(--bee-black);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .evento-details {
+            margin-bottom: 1.5rem;
+        }
+        
+        .evento-details p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .evento-details i {
+            margin-right: 10px;
+            color: var(--honey-yellow);
+            width: 20px;
+            text-align: center;
+        }
+        
+        .btn-bee {
+            background: var(--honey-yellow);
+            color: var(--bee-black);
+            border: none;
+            border-radius: 50px;
+            padding: 12px 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-bee:hover {
+            background: var(--honey-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 193, 7, 0.6);
+        }
+        
+        .floating-bee {
+            position: absolute;
+            font-size: 2rem;
+            z-index: 5;
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .detail-item {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--honey-yellow);
+        }
+        
+        .detail-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+        }
+        
+        .detail-icon {
+            font-size: 2.5rem;
+            color: var(--honey-yellow);
+            margin-bottom: 1rem;
+        }
+        
+        /* Estilos del carrusel */
+        #photoCarousel {
+            max-width: 800px;
+            margin: 2rem auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        #photoCarousel .carousel-item img {
+            height: 500px;
+            object-fit: contain;
+            border-radius: 15px;
+            background-color: var(--bee-white);
+        }
+        
+        #photoCarousel .carousel-control-prev,
+        #photoCarousel .carousel-control-next {
+            background: rgba(255, 193, 7, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        #photoCarousel .carousel-control-prev {
+            left: 15px;
+        }
+        
+        #photoCarousel .carousel-control-next {
+            right: 15px;
+        }
+        
+        #photoCarousel .carousel-indicators {
+            bottom: -40px;
+        }
+        
+        #photoCarousel .carousel-indicators button {
+            background-color: var(--honey-yellow);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        
+        @media (max-width: 768px) {
+            #photoCarousel .carousel-item img {
+                height: 300px;
+                object-fit: contain;
+            }
+        }
+        
+        .rsvp-form {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+        
+        .form-control {
+            border: 2px solid var(--honey-light);
+            border-radius: 10px;
+            padding: 12px 15px;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--honey-yellow);
+            box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+        }
+        
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        .btn-music {
+            background: var(--honey-yellow);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--bee-black);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-music:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .countdown-item {
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            min-width: 80px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--honey-yellow);
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            color: var(--bee-black);
+            margin-top: 5px;
+        }
+        
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            background: var(--honey-yellow);
+            top: 0;
+            opacity: 0;
+        }
+        
+        @keyframes confetti-fall {
+            0% { opacity: 1; top: -100px; transform: rotate(0deg); }
+            100% { opacity: 0; top: 100vh; transform: rotate(360deg); }
+        }
+        
+        .bee-buzz {
+            animation: buzz 0.5s ease-in-out;
+        }
+        
+        @keyframes buzz {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        /* Abejita orbitando alrededor de la foto principal */
+        .photo-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .orbiting-bee {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: 50%;
+            left: 50%;
+            margin: -15px 0 0 -15px;
+            animation: beefly 18s ease-in-out infinite, flutter 0.2s ease-in-out infinite alternate;
+            z-index: 15;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        @keyframes flutter {
+            0% {
+                transform: scaleY(1) scaleX(1);
+            }
+            100% {
+                transform: scaleY(0.8) scaleX(1.2);
+            }
+        }
+        
+        @keyframes beefly {
+            0% {
+                left: calc(50% + 130px);
+                top: calc(50% - 10px);
+                transform: rotate(0deg);
+            }
+            8% {
+                left: calc(50% + 115px);
+                top: calc(50% - 65px);
+                transform: rotate(30deg);
+            }
+            16% {
+                left: calc(50% + 75px);
+                top: calc(50% - 105px);
+                transform: rotate(60deg);
+            }
+            25% {
+                left: calc(50% + 15px);
+                top: calc(50% - 125px);
+                transform: rotate(90deg);
+            }
+            33% {
+                left: calc(50% - 45px);
+                top: calc(50% - 115px);
+                transform: rotate(120deg);
+            }
+            41% {
+                left: calc(50% - 95px);
+                top: calc(50% - 75px);
+                transform: rotate(150deg);
+            }
+            50% {
+                left: calc(50% - 130px);
+                top: calc(50% - 10px);
+                transform: rotate(180deg);
+            }
+            58% {
+                left: calc(50% - 115px);
+                top: calc(50% + 55px);
+                transform: rotate(210deg);
+            }
+            66% {
+                left: calc(50% - 75px);
+                top: calc(50% + 95px);
+                transform: rotate(240deg);
+            }
+            75% {
+                left: calc(50% - 15px);
+                top: calc(50% + 115px);
+                transform: rotate(270deg);
+            }
+            83% {
+                left: calc(50% + 45px);
+                top: calc(50% + 105px);
+                transform: rotate(300deg);
+            }
+            91% {
+                left: calc(50% + 95px);
+                top: calc(50% + 65px);
+                transform: rotate(330deg);
+            }
+            100% {
+                left: calc(50% + 130px);
+                top: calc(50% - 10px);
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(130px) rotate(0deg) scaleY(1);
+            }
+            25% {
+                transform: rotate(90deg) translateX(130px) rotate(-90deg) scaleY(1);
+            }
+            50% {
+                transform: rotate(180deg) translateX(130px) rotate(-180deg) scaleY(1);
+            }
+            75% {
+                transform: rotate(270deg) translateX(130px) rotate(-270deg) scaleY(1);
+            }
+            100% {
+                transform: rotate(360deg) translateX(130px) rotate(-360deg) scaleY(1);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .foto-principal {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .invitacion-card {
+                padding: 1.5rem;
+            }
+            
+            .countdown {
+                flex-wrap: wrap;
+            }
+            
+            .floating-bee {
+                font-size: 1.5rem;
+            }
+        }
+        
+        footer {
+            background: var(--bee-black);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-bees {
+            margin-top: 1rem;
+        }
+        
+        .footer-bees span {
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        /* Estilos para imágenes de abejitas decorativas */
+        .bee-decoration {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            z-index: 5;
+            animation: float 4s infinite ease-in-out;
+        }
+        
+        .bee-image {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            z-index: 5;
+            animation: float 5s infinite ease-in-out;
+            box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+        }
+        
+        .bee-decoration.small {
+            width: 25px;
+            height: 25px;
+        }
+        
+        .bee-decoration.large {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .bee-corner {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            opacity: 0.7;
+        }
+        
+        .bee-corner.top-left {
+            top: 20px;
+            left: 20px;
+            transform: rotate(-15deg);
+        }
+        
+        .bee-corner.top-right {
+            top: 20px;
+            right: 20px;
+            transform: rotate(15deg);
+        }
+        
+        .bee-corner.bottom-left {
+            bottom: 20px;
+            left: 20px;
+            transform: rotate(15deg);
+        }
+        
+        .bee-corner.bottom-right {
+            bottom: 20px;
+            right: 20px;
+            transform: rotate(-15deg);
+        }
+        
+        .section-bee {
+            position: relative;
+        }
+        
+        .section-bee::before {
+            content: "🐝";
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            font-size: 2rem;
+            z-index: 10;
+            animation: float 3s infinite ease-in-out;
+        }
+        
+        .honeycomb-decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,5 85,25 85,75 50,95 15,75 15,25" fill="%23FFC107" opacity="0.3" stroke="%23FF9800" stroke-width="2"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.4;
+        }
+        
+        .bee-trail {
+            position: absolute;
+            width: 3px;
+            height: 50px;
+            background: linear-gradient(to bottom, transparent, #FFC107, transparent);
+            border-radius: 50px;
+            animation: trail 2s infinite ease-in-out;
+        }
+        
+        @keyframes trail {
+            0%, 100% { opacity: 0; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(10px); }
+        }
+    </style>
+</head>
+<body class="bee-bg">
+    <!-- Música de fondo -->
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="audio/background-music.mp3" type="audio/mpeg">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+    </audio>
+    
+    <!-- Botón de música -->
+    <div class="music-control">
+        <button id="musicBtn" class="btn-music" onclick="toggleMusic()">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+    
+    <!-- Efectos de partículas -->
+    <div class="confetti" id="confetti"></div>
+    
+    <!-- Sección Hero -->
+    <section class="hero-section honeycomb-bg">
+        <!-- Abejitas flotantes -->
+        <div class="floating-bee" style="top: 10%; left: 5%;">🐝</div>
+        <div class="floating-bee" style="top: 20%; right: 10%;">🍯</div>
+        <div class="floating-bee" style="bottom: 30%; left: 8%;">🌻</div>
+        <div class="floating-bee" style="bottom: 15%; right: 5%;">🐝</div>
+        
+        <!-- Decoraciones de abejitas en las esquinas -->
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg%3E%3Cellipse cx='50' cy='40' rx='25' ry='15' fill='%23FFD700'/%3E%3Cellipse cx='50' cy='60' rx='20' ry='12' fill='%23FFA500'/%3E%3Ccircle cx='45' cy='35' r='3' fill='%23000'/%3E%3Ccircle cx='55' cy='35' r='3' fill='%23000'/%3E%3Cpath d='M30 45 Q25 35 35 40' stroke='%23000' stroke-width='2' fill='none'/%3E%3Cpath d='M70 45 Q75 35 65 40' stroke='%23000' stroke-width='2' fill='none'/%3E%3Cpath d='M40 25 Q35 15 45 20' stroke='%23000' stroke-width='1' fill='none'/%3E%3Cpath d='M60 25 Q65 15 55 20' stroke='%23000' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/svg%3E" class="bee-corner top-left" alt="Abejita decorativa">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg%3E%3Cellipse cx='50' cy='40' rx='25' ry='15' fill='%23FFD700'/%3E%3Cellipse cx='50' cy='60' rx='20' ry='12' fill='%23FFA500'/%3E%3Ccircle cx='45' cy='35' r='3' fill='%23000'/%3E%3Ccircle cx='55' cy='35' r='3' fill='%23000'/%3E%3Cpath d='M30 45 Q25 35 35 40' stroke='%23000' stroke-width='2' fill='none'/%3E%3Cpath d='M70 45 Q75 35 65 40' stroke='%23000' stroke-width='2' fill='none'/%3E%3Cpath d='M40 25 Q35 15 45 20' stroke='%23000' stroke-width='1' fill='none'/%3E%3Cpath d='M60 25 Q65 15 55 20' stroke='%23000' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/svg%3E" class="bee-corner top-right" alt="Abejita decorativa">
+        
+        <!-- Decoraciones de panal -->
+        <div class="honeycomb-decoration" style="top: 15%; left: 15%; animation-delay: 1s;"></div>
+        <div class="honeycomb-decoration" style="bottom: 20%; right: 15%; animation-delay: 2s;"></div>
+        
+        <!-- Imágenes de abejitas reales -->
+        <img src="images/Abejita 1.avif" class="bee-image" style="top: 25%; left: 80%; animation-delay: 0.5s;" alt="Abejita decorativa">
+        <img src="images/Abejita 2.jpg" class="bee-image" style="bottom: 40%; left: 5%; animation-delay: 1.8s;" alt="Abejita decorativa">
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="photo-container">
+                    <img src="./images/Eli 4.jpg" alt="Nuestro pequeño abejita" class="foto-principal" onclick="playBeeSound()">
+                    <img src="images/abejita_aletea.gif" class="orbiting-bee" alt="Abejita volando">
+                </div>
+                
+                <h1 class="main-title">¡Doble Celebración!</h1>
+                <h2 class="subtitle">Bautizo y cumpleaños de nuestro pequeño abejita</h2>
+                
+                <div class="invitacion-card">
+                    <h3 class="section-title">Invitación Especial</h3>
+                    <p class="text-center mb-4" style="font-size: 1.2rem;">
+                        Con gran alegría en nuestros corazones, te invitamos a compartir 
+                        este momento tan especial en la vida de nuestro pequeño.
+                    </p>
+                    
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="days">00</div>
+                            <div class="countdown-label">Días</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="hours">00</div>
+                            <div class="countdown-label">Horas</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="minutes">00</div>
+                            <div class="countdown-label">Minutos</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="seconds">00</div>
+                            <div class="countdown-label">Segundos</div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="btn btn-bee me-3 mb-3" onclick="showSurprise()">
+                            <i class="fas fa-gift me-2"></i> ¡Sorpresa!
+                        </button>
+                        <button class="btn btn-bee mb-3" onclick="scrollToGallery()">
+                            <i class="fas fa-images me-2"></i> Ver Fotos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Información del evento -->
+    <section class="py-5 section-bee">
+        <!-- Abejitas decorativas para esta sección -->
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg%3E%3Cellipse cx='30' cy='25' rx='15' ry='10' fill='%23FFD700'/%3E%3Cellipse cx='30' cy='35' rx='12' ry='8' fill='%23FFA500'/%3E%3Ccircle cx='27' cy='22' r='2' fill='%23000'/%3E%3Ccircle cx='33' cy='22' r='2' fill='%23000'/%3E%3Cpath d='M18 27 Q15 20 22 24' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3Cpath d='M42 27 Q45 20 38 24' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3C/g%3E%3C/svg%3E" class="bee-decoration" style="top: 10%; left: 10%; animation-delay: 0.5s;" alt="Abejita">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg%3E%3Cellipse cx='30' cy='25' rx='15' ry='10' fill='%23FFD700'/%3E%3Cellipse cx='30' cy='35' rx='12' ry='8' fill='%23FFA500'/%3E%3Ccircle cx='27' cy='22' r='2' fill='%23000'/%3E%3Ccircle cx='33' cy='22' r='2' fill='%23000'/%3E%3Cpath d='M18 27 Q15 20 22 24' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3Cpath d='M42 27 Q45 20 38 24' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3C/g%3E%3C/svg%3E" class="bee-decoration small" style="top: 20%; right: 15%; animation-delay: 1.5s;" alt="Abejita">
+        
+        <!-- Imágenes de abejitas reales -->
+        <img src="images/Abejita 3.png" class="bee-image" style="top: 5%; right: 5%; animation-delay: 2.2s;" alt="Abejita decorativa">
+        <img src="images/Icono Abejita 1.png" class="bee-image" style="bottom: 10%; left: 20%; animation-delay: 0.8s;" alt="Abejita decorativa">
+        <div class="container">
+            <!-- Información de la familia -->
+            <h2 class="section-title text-center mb-5">Nuestra Familia</h2>
+            
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <div class="evento-card">
+                        <div class="evento-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h3 class="evento-title">Nuestro Festejado</h3>
+                        <div class="evento-details">
+                            <p><i class="fas fa-user"></i> <strong>Nombre:</strong><br> Angel Elian Saldivar Camacho</p>
+                            <p><i class="fas fa-birthday-cake"></i> <strong>Nacimiento:</strong><br> 02 de Diciembre del 2024</p>
+                            <p><i class="fas fa-heart"></i> <strong>Edad:</strong> 1 Año</p>
+                            <p><i class="fas fa-star"></i> <strong>Signo:</strong> Sagitario ♐</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="evento-card">
+                        <div class="evento-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="evento-title">Los Papás</h3>
+                        <div class="evento-details">
+                            <p><i class="fas fa-male"></i> <strong>Papá:</strong><br> Angel Armando<br> Saldivar Avilez</p>
+                            <p><i class="fas fa-female"></i> <strong>Mamá:</strong><br> Guadalupe Lisette<br> Camacho Perez</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="evento-card">
+                        <div class="evento-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="evento-title">Los Padrinos</h3>
+                        <div class="evento-details">
+                            <p><i class="fas fa-male"></i> <strong>Padrino:</strong><br> [Nombre del Padrino]</p>
+                            <p><i class="fas fa-female"></i> <strong>Madrina:</strong><br> [Nombre de la Madrina]</p>
+                            <p><i class="fas fa-cross"></i> <strong>Compromiso:</strong><br> Guías espirituales</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title text-center mb-5">Detalles de la Celebración</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="evento-card">
+                        <div class="evento-icon">
+                            <i class="fas fa-church"></i>
+                        </div>
+                        <h3 class="evento-title">Santa Misa de Bautizo</h3>
+                        <div class="evento-details">
+                            <p><i class="fas fa-calendar-alt"></i> <strong>Fecha:</strong> 13 de Diciembre, 2025</p>
+                            <p><i class="fas fa-clock"></i> <strong>Hora:</strong> 12:00 PM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> <strong>Lugar:</strong> Parroquia San Juan Bautista</p>
+                            <p><i class="fas fa-location-arrow"></i> <strong>Dirección:</strong> Av. Principal #123, Centro</p>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-bee" onclick="showLocation('church')">
+                                <i class="fas fa-map-marked-alt me-2"></i> Ver Ubicación
+                            </button>   
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="evento-card">
+                        <div class="evento-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <h3 class="evento-title">Fiesta de Celebración</h3>
+                        <div class="evento-details">
+                            <p><i class="fas fa-calendar-alt"></i> <strong>Fecha:</strong> 13 de Diciembre, 2025</p>
+                            <p><i class="fas fa-clock"></i> <strong>Hora:</strong> 2:00 PM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> <strong>Lugar:</strong> Salón de Eventos "Dulce Miel"</p>
+                            <p><i class="fas fa-location-arrow"></i> <strong>Dirección:</strong> Calle Flores #456, Jardines</p>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-bee" onclick="showLocation('party')">
+                                <i class="fas fa-map-marked-alt me-2"></i> Ver Ubicación
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Detalles importantes -->
+    <section class="py-5 honeycomb-bg section-bee">
+        <!-- Rastros de vuelo de abejas -->
+        <div class="bee-trail" style="top: 15%; left: 20%; animation-delay: 0s;"></div>
+        <div class="bee-trail" style="top: 25%; right: 25%; animation-delay: 1s;"></div>
+        <div class="bee-trail" style="bottom: 30%; left: 30%; animation-delay: 2s;"></div>
+        
+        <!-- Imágenes de abejitas reales -->
+        <img src="images/Abejita 4.png" class="bee-image" style="top: 8%; left: 85%; animation-delay: 1.3s;" alt="Abejita decorativa">
+        <img src="images/Abejita Año 1.jpg" class="bee-image" style="bottom: 15%; right: 20%; animation-delay: 2.7s;" alt="Abejita decorativa">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Información Importante</h2>
+            
+            <div class="details-grid">
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h4>Regalos</h4>
+                    <p>Tu presencia es nuestro mejor regalo. Si deseas obsequiar algo, será muy apreciado.</p>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h4>Vestimenta</h4>
+                    <p>Código: Elegante casual. Colores amarillo y blanco son bienvenidos.</p>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h4>Fotos</h4>
+                    <p>Captura los momentos especiales. Comparte con #AbejitaComunion</p>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h4>Para los Niños</h4>
+                    <p>Habrá área especial con juegos y actividades para los más pequeños.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Galería -->
+    <section class="py-5 section-bee" id="gallery">
+        <!-- Abejitas volando alrededor de la galería -->
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cg%3E%3Cellipse cx='40' cy='30' rx='20' ry='12' fill='%23FFD700'/%3E%3Cellipse cx='40' cy='45' rx='16' ry='10' fill='%23FFA500'/%3E%3Ccircle cx='35' cy='27' r='2.5' fill='%23000'/%3E%3Ccircle cx='45' cy='27' r='2.5' fill='%23000'/%3E%3Cpath d='M22 35 Q18 25 28 30' stroke='%23000' stroke-width='2' fill='none'/%3E%3Cpath d='M58 35 Q62 25 52 30' stroke='%23000' stroke-width='2' fill='none'/%3E%3Cpath d='M30 18 Q25 8 35 13' stroke='%23000' stroke-width='1' fill='none'/%3E%3Cpath d='M50 18 Q55 8 45 13' stroke='%23000' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/svg%3E" class="bee-decoration large" style="top: 5%; left: 5%; animation-delay: 0.8s;" alt="Abejita grande">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg%3E%3Cellipse cx='30' cy='25' rx='15' ry='10' fill='%23FFD700'/%3E%3Cellipse cx='30' cy='35' rx='12' ry='8' fill='%23FFA500'/%3E%3Ccircle cx='27' cy='22' r='2' fill='%23000'/%3E%3Ccircle cx='33' cy='22' r='2' fill='%23000'/%3E%3Cpath d='M18 27 Q15 20 22 24' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3Cpath d='M42 27 Q45 20 38 24' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3C/g%3E%3C/svg%3E" class="bee-decoration" style="top: 15%; right: 8%; animation-delay: 2.2s;" alt="Abejita">
+        
+        <!-- Imágenes de abejitas reales en la galería -->
+        <img src="images/Abejita 1.avif" class="bee-image" style="top: 12%; left: 88%; animation-delay: 1.1s;" alt="Abejita decorativa">
+        <img src="images/Abejita 2.jpg" class="bee-image" style="bottom: 8%; left: 12%; animation-delay: 3.5s;" alt="Abejita decorativa">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Nuestro Pequeño Abejita</h2>
+            
+            <!-- Carrusel de fotos -->
+            <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="4"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="5"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="6"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="7"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="8"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="9"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="10"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="11"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="12"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="13"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="14"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="15"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="16"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="17"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="18"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="19"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="20"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="21"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="22"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="23"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="24"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="25"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="26"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="27"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="28"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="29"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="30"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="31"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="32"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="33"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="34"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="35"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="36"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="37"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="38"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="39"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="40"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="41"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="42"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="43"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="44"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="45"></button>
+                    <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="46"></button>
+                </div>
+                
+                <div class="carousel-inner">
+                    <!-- Fotos Inicio -->
+                    <div class="carousel-item active">
+                        <img src="images/Inicio 1.jpg" class="d-block w-100" alt="Inicio 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 2.jpg" class="d-block w-100" alt="Inicio 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 3.jpg" class="d-block w-100" alt="Inicio 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 4.jpg" class="d-block w-100" alt="Inicio 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 5.jpg" class="d-block w-100" alt="Inicio 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 6.jpg" class="d-block w-100" alt="Inicio 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 7.jpg" class="d-block w-100" alt="Inicio 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 8.jpg" class="d-block w-100" alt="Inicio 8">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 9.jpg" class="d-block w-100" alt="Inicio 9">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 10.jpg" class="d-block w-100" alt="Inicio 10">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 11.jpg" class="d-block w-100" alt="Inicio 11">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 12.jpg" class="d-block w-100" alt="Inicio 12">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 13.jpg" class="d-block w-100" alt="Inicio 13">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 14.jpg" class="d-block w-100" alt="Inicio 14">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 15.jpg" class="d-block w-100" alt="Inicio 15">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 16.jpg" class="d-block w-100" alt="Inicio 16">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 17.jpg" class="d-block w-100" alt="Inicio 17">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 18.jpg" class="d-block w-100" alt="Inicio 18">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 19.jpg" class="d-block w-100" alt="Inicio 19">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 20.jpg" class="d-block w-100" alt="Inicio 20">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Inicio 21.jpg" class="d-block w-100" alt="Inicio 21">
+                    </div>
+                    
+                    <!-- Fotos Final -->
+                    <div class="carousel-item">
+                        <img src="images/Final 1.jpg" class="d-block w-100" alt="Final 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 2.jpg" class="d-block w-100" alt="Final 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 3.jpg" class="d-block w-100" alt="Final 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 4.jpg" class="d-block w-100" alt="Final 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 5.jpg" class="d-block w-100" alt="Final 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 6.jpg" class="d-block w-100" alt="Final 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 8.jpg" class="d-block w-100" alt="Final 8">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 9.jpg" class="d-block w-100" alt="Final 9">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 10.jpg" class="d-block w-100" alt="Final 10">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 11.jpg" class="d-block w-100" alt="Final 11">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 12.jpg" class="d-block w-100" alt="Final 12">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 13.jpg" class="d-block w-100" alt="Final 13">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 14.jpg" class="d-block w-100" alt="Final 14">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 15.jpg" class="d-block w-100" alt="Final 15">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 16.jpg" class="d-block w-100" alt="Final 16">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 17.jpg" class="d-block w-100" alt="Final 17">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 18.jpg" class="d-block w-100" alt="Final 18">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 19.jpg" class="d-block w-100" alt="Final 19">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 20.jpg" class="d-block w-100" alt="Final 20">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 21.jpg" class="d-block w-100" alt="Final 21">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 22.jpg" class="d-block w-100" alt="Final 22">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 24.jpg" class="d-block w-100" alt="Final 24">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 25.jpg" class="d-block w-100" alt="Final 25">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 26.jpg" class="d-block w-100" alt="Final 26">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Final 27.jpg" class="d-block w-100" alt="Final 27">
+                    </div>
+                    
+                    <!-- Foto Final Final -->
+                    <div class="carousel-item">
+                        <img src="images/Final final.jpg" class="d-block w-100" alt="Final final">
+                    </div>
+                </div>
+                
+                <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Confirmación -->
+    <section class="py-5 honeycomb-bg">
+        <!-- Abejitas en las esquinas del formulario -->
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg%3E%3Cellipse cx='30' cy='25' rx='15' ry='10' fill='%23FFD700'/%3E%3Cellipse cx='30' cy='35' rx='12' ry='8' fill='%23FFA500'/%3E%3Ccircle cx='27' cy='22' r='2' fill='%23000'/%3E%3Ccircle cx='33' cy='22' r='2' fill='%23000'/%3E%3Cpath d='M18 27 Q15 20 22 24' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3Cpath d='M42 27 Q45 20 38 24' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3C/g%3E%3C/svg%3E" class="bee-decoration" style="top: 10%; left: 12%; animation-delay: 1.8s;" alt="Abejita">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg%3E%3Cellipse cx='30' cy='25' rx='15' ry='10' fill='%23FFD700'/%3E%3Cellipse cx='30' cy='35' rx='12' ry='8' fill='%23FFA500'/%3E%3Ccircle cx='27' cy='22' r='2' fill='%23000'/%3E%3Ccircle cx='33' cy='22' r='2' fill='%23000'/%3E%3Cpath d='M18 27 Q15 20 22 24' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3Cpath d='M42 27 Q45 20 38 24' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3C/g%3E%3C/svg%3E" class="bee-decoration small" style="bottom: 15%; right: 10%; animation-delay: 0.3s;" alt="Abejita pequeña">
+        
+        <!-- Imágenes de abejitas reales en confirmación -->
+        <img src="images/Abejita 3.png" class="bee-image" style="top: 5%; right: 8%; animation-delay: 2.5s;" alt="Abejita decorativa">
+        <img src="images/Abejita 4.png" class="bee-image" style="bottom: 5%; left: 15%; animation-delay: 4.1s;" alt="Abejita decorativa">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Confirma tu Asistencia</h2>
+            
+            <div class="rsvp-form">
+                <p class="text-center mb-4" style="font-size: 1.1rem;">
+                    Por favor confirma tu asistencia antes del 13 de Diciembre para poder organizar todo mejor.
+                </p>
+                
+                <div class="text-center">
+                    <a href="https://wa.me/5628232872?text=Confirmo%20asistencia!" class="btn btn-bee">
+                        <i class="fab fa-whatsapp me-2"></i> Confirmar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer style="position: relative;">
+        <!-- Abejitas decorativas en el footer -->
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg%3E%3Cellipse cx='30' cy='25' rx='15' ry='10' fill='%23FFD700'/%3E%3Cellipse cx='30' cy='35' rx='12' ry='8' fill='%23FFA500'/%3E%3Ccircle cx='27' cy='22' r='2' fill='%23000'/%3E%3Ccircle cx='33' cy='22' r='2' fill='%23000'/%3E%3Cpath d='M18 27 Q15 20 22 24' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3Cpath d='M42 27 Q45 20 38 24' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3C/g%3E%3C/svg%3E" class="bee-corner bottom-left" alt="Abejita decorativa">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cg%3E%3Cellipse cx='30' cy='25' rx='15' ry='10' fill='%23FFD700'/%3E%3Cellipse cx='30' cy='35' rx='12' ry='8' fill='%23FFA500'/%3E%3Ccircle cx='27' cy='22' r='2' fill='%23000'/%3E%3Ccircle cx='33' cy='22' r='2' fill='%23000'/%3E%3Cpath d='M18 27 Q15 20 22 24' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3Cpath d='M42 27 Q45 20 38 24' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3C/g%3E%3C/svg%3E" class="bee-corner bottom-right" alt="Abejita decorativa">
+        
+        <!-- Imágenes de abejitas reales en el footer -->
+        <img src="images/Icono Abejita 1.png" class="bee-image" style="top: 10%; left: 50%; animation-delay: 1.7s;" alt="Abejita decorativa">
+        <img src="images/Abejita Año 1.jpg" class="bee-image" style="top: 15%; right: 30%; animation-delay: 3.2s;" alt="Abejita decorativa">
+        <div class="container">
+            <p>¡Esperamos verte en nuestra celebración!</p>
+            <div class="footer-bees">
+                <span>🐝</span>
+                <span>🍯</span>
+                <span>🌻</span>
+                <span>✨</span>
+                <span>🐝</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modales -->
+    <!-- Modal Sorpresa -->
+    <div class="modal fade" id="surpriseModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background: var(--honey-yellow); border: none;">
+                    <h5 class="modal-title">🐝 ¡Sorpresa!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="mb-3">
+                        <span style="font-size: 4rem;">🍯</span>
+                    </div>
+                    <p class="mb-3">¡Nuestro pequeño abejita está muy emocionado de celebrar contigo!</p>
+                    <p>Habrá muchas sorpresas especiales durante la celebración. ¡No te las pierdas!</p>
+                </div>
+                <div class="modal-footer" style="border: none; justify-content: center;">
+                    <button type="button" class="btn btn-bee" data-bs-dismiss="modal">¡Genial! 🐝</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Ubicación -->
+    <div class="modal fade" id="locationModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background: var(--honey-yellow); border: none;">
+                    <h5 class="modal-title" id="locationModalTitle">📍 Ubicación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="locationModalContent"></div>
+                </div>
+                <div class="modal-footer" style="border: none; justify-content: center;">
+                    <button type="button" class="btn btn-bee" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Variables globales
+        let countdownTimer;
+        let musicStarted = false;
+
+        // Funciones interactivas
+        function toggleMusic() {
+            const music = document.getElementById('backgroundMusic');
+            const btn = document.getElementById('musicBtn');
+            if (music.paused) {
+                music.play();
+                btn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                music.pause();
+                btn.innerHTML = '<i class="fas fa-music"></i>';
+            }
+        }
+
+        function playBeeSound() {
+            const photo = document.querySelector('.foto-principal');
+            photo.classList.add('bee-buzz');
+            setTimeout(() => photo.classList.remove('bee-buzz'), 500);
+            createConfetti();
+        }
+
+        function showSurprise() {
+            const modal = new bootstrap.Modal(document.getElementById('surpriseModal'));
+            modal.show();
+            createConfetti();
+        }
+
+        function showLocation(type) {
+            const modal = new bootstrap.Modal(document.getElementById('locationModal'));
+            const title = document.getElementById('locationModalTitle');
+            const content = document.getElementById('locationModalContent');
+            
+            if (type === 'church') {
+                title.innerHTML = '⛪ Bautizo - Parroquia San Juan Bautista';
+                content.innerHTML = `
+                    <div class="text-center mb-3">
+                        <i class="fas fa-church" style="font-size: 3rem; color: var(--honey-yellow);"></i>
+                    </div>
+                    <p><strong>📅 Fecha:</strong> 13 de Diciembre, 2025</p>
+                    <p><strong>🕐 Hora:</strong> 12:00 PM</p>
+                    <p><strong>📍 Dirección:</strong> Av. Principal #123, Centro</p>
+                    <p><strong>ℹ️ Información:</strong> Ceremonia religiosa del bautizo</p>
+                `;
+            } else if (type === 'party') {
+                title.innerHTML = '🎉 Fiesta - Salón "Dulce Miel"';
+                content.innerHTML = `
+                    <div class="text-center mb-3">
+                        <i class="fas fa-glass-cheers" style="font-size: 3rem; color: var(--honey-yellow);"></i>
+                    </div>
+                    <p><strong>📅 Fecha:</strong> 13 de Diciembre, 2025</p>
+                    <p><strong>🕐 Hora:</strong> 2:00 PM</p>
+                    <p><strong>📍 Dirección:</strong> Calle Flores #456, Jardines</p>
+                    <p><strong>ℹ️ Información:</strong> Celebración con comida, música y diversión</p>
+                `;
+            }
+            modal.show();
+        }
+
+        function scrollToGallery() {
+            document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Contador regresivo
+        function startCountdown() {
+            function updateCountdown() {
+                const targetDate = new Date('2025-12-13T12:00:00');
+                const now = new Date();
+                const diff = targetDate - now;
+
+                if (diff <= 0) {
+                    document.querySelector('.countdown').innerHTML = '<h4>¡El evento ha comenzado!</h4>';
+                    clearInterval(countdownTimer);
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+                document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+            }
+            
+            updateCountdown();
+            countdownTimer = setInterval(updateCountdown, 1000);
+        }
+
+        // Iniciar música automáticamente
+        function startMusic() {
+            if (!musicStarted) {
+                const music = document.getElementById('backgroundMusic');
+                const btn = document.getElementById('musicBtn');
+                music.play().then(() => {
+                    btn.innerHTML = '<i class="fas fa-pause"></i>';
+                    musicStarted = true;
+                }).catch(() => {});
+            }
+        }
+
+        function createConfetti() {
+            const confettiContainer = document.getElementById('confetti');
+            confettiContainer.innerHTML = '';
+
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti-piece';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = ['#FFC107', '#FF9800', '#FFEB3B'][Math.floor(Math.random() * 3)];
+                confetti.style.animation = `confetti-fall ${2 + Math.random() * 3}s linear forwards`;
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                confettiContainer.appendChild(confetti);
+            }
+
+            setTimeout(() => {
+                confettiContainer.innerHTML = '';
+            }, 5000);
+        }
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            startCountdown();
+            
+            // Intentar reproducir música inmediatamente
+            setTimeout(startMusic, 500);
+            
+            // También intentar al hacer clic
+            document.addEventListener('click', startMusic, { once: true });
+        });
+    </script>
+</body>
+</html>
