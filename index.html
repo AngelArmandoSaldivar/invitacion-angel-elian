@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🐝 Bautizo y cumpleaños de nuestro pequeño abejita 🍯</title>
+    <title>🐝 Bautizo y cumpleaños de nuestra pequeña abejita 🍯</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Courgette&display=swap" rel="stylesheet">
@@ -680,9 +680,9 @@
 </head>
 <body class="bee-bg">
     <!-- Música de fondo -->
-    <audio id="backgroundMusic" loop preload="auto">
-        <source src="audio/background-music.mp3" type="audio/mpeg">
-        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+    <div id="youtube-player" style="position: absolute; top: -9999px; left: -9999px;"></div>
+    <audio id="backgroundMusic" loop style="display: none;">
+        <source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mpeg">
     </audio>
     
     <!-- Botón de música -->
@@ -718,12 +718,12 @@
         <div class="container">
             <div class="hero-content">
                 <div class="photo-container">
-                    <img src="./images/Eli 4.jpg" alt="Nuestro pequeño abejita" class="foto-principal" onclick="playBeeSound()">
+                    <img src="./images/Eli 4.jpg" alt="Nuestra pequeña abejita" class="foto-principal" onclick="playBeeSound()">
                     <img src="images/abejita_aletea.gif" class="orbiting-bee" alt="Abejita volando">
                 </div>
                 
                 <h1 class="main-title">¡Doble Celebración!</h1>
-                <h2 class="subtitle">Bautizo y cumpleaños de nuestro pequeño abejita</h2>
+                <h2 class="subtitle">Bautizo y cumpleaños de nuestra pequeña abejita</h2>
                 
                 <div class="invitacion-card">
                     <h3 class="section-title">Invitación Especial</h3>
@@ -813,8 +813,8 @@
                         </div>
                         <h3 class="evento-title">Los Padrinos</h3>
                         <div class="evento-details">
-                            <p><i class="fas fa-male"></i> <strong>Padrino:</strong><br> [Nombre del Padrino]</p>
-                            <p><i class="fas fa-female"></i> <strong>Madrina:</strong><br> [Nombre de la Madrina]</p>
+                            <p><i class="fas fa-male"></i> <strong>Padrino:</strong><br> Oscar Eduardo Rosas Ramirez</p>
+                            <p><i class="fas fa-female"></i> <strong>Madrina:</strong><br> Nancy Alejandra Camacho Perez</p>
                             <p><i class="fas fa-cross"></i> <strong>Compromiso:</strong><br> Guías espirituales</p>
                         </div>
                     </div>
@@ -832,14 +832,14 @@
                         <h3 class="evento-title">Santa Misa de Bautizo</h3>
                         <div class="evento-details">
                             <p><i class="fas fa-calendar-alt"></i> <strong>Fecha:</strong> 13 de Diciembre, 2025</p>
-                            <p><i class="fas fa-clock"></i> <strong>Hora:</strong> 12:00 PM</p>
+                            <p><i class="fas fa-clock"></i> <strong>Hora:</strong> 1:00 PM</p>
                             <p><i class="fas fa-map-marker-alt"></i> <strong>Lugar:</strong> Parroquia San Juan Bautista</p>
                             <p><i class="fas fa-location-arrow"></i> <strong>Dirección:</strong> Av. Principal #123, Centro</p>
                         </div>
                         <div class="text-center">
-                            <button class="btn btn-bee" onclick="showLocation('church')">
+                            <a href="https://www.google.com/maps/place/Parroquia+de+San+Ignacio+de+Loyola/@19.2853009,-98.9130235,17z/data=!4m16!1m9!3m8!1s0x85ce1e96d4e724cb:0xfb1146f4d60e8746!2sParroquia+de+San+Ignacio+de+Loyola!8m2!3d19.2853009!4d-98.9104486!9m1!1b1!16s%2Fg%2F1pt_bp4c1!3m5!1s0x85ce1e96d4e724cb:0xfb1146f4d60e8746!8m2!3d19.2853009!4d-98.9104486!16s%2Fg%2F1pt_bp4c1?hl=es-US&entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-bee">
                                 <i class="fas fa-map-marked-alt me-2"></i> Ver Ubicación
-                            </button>   
+                            </a>   
                         </div>
                     </div>
                 </div>
@@ -857,9 +857,9 @@
                             <p><i class="fas fa-location-arrow"></i> <strong>Dirección:</strong> Calle Flores #456, Jardines</p>
                         </div>
                         <div class="text-center">
-                            <button class="btn btn-bee" onclick="showLocation('party')">
+                            <a href="https://maps.app.goo.gl/qBtGo6sZnzKMUwMEA" target="_blank" class="btn btn-bee">
                                 <i class="fas fa-map-marked-alt me-2"></i> Ver Ubicación
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -926,7 +926,7 @@
         <img src="images/Abejita 1.avif" class="bee-image" style="top: 12%; left: 88%; animation-delay: 1.1s;" alt="Abejita decorativa">
         <img src="images/Abejita 2.jpg" class="bee-image" style="bottom: 8%; left: 12%; animation-delay: 3.5s;" alt="Abejita decorativa">
         <div class="container">
-            <h2 class="section-title text-center mb-5">Nuestro Pequeño Abejita</h2>
+            <h2 class="section-title text-center mb-5">Nuestra Pequeña Abejita</h2>
             
             <!-- Carrusel de fotos -->
             <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -1201,7 +1201,7 @@
                     <div class="mb-3">
                         <span style="font-size: 4rem;">🍯</span>
                     </div>
-                    <p class="mb-3">¡Nuestro pequeño abejita está muy emocionado de celebrar contigo!</p>
+                    <p class="mb-3">¡Nuestra pequeña abejita está muy emocionado de celebrar contigo!</p>
                     <p>Habrá muchas sorpresas especiales durante la celebración. ¡No te las pierdas!</p>
                 </div>
                 <div class="modal-footer" style="border: none; justify-content: center;">
@@ -1230,21 +1230,64 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         // Variables globales
         let countdownTimer;
         let musicStarted = false;
+        let player;
+        let youtubeVideoId = 'Bya-v3tww7o';
+        
+        // API de YouTube
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-player', {
+                height: '1',
+                width: '1',
+                videoId: youtubeVideoId,
+                playerVars: {
+                    autoplay: 0,
+                    loop: 1,
+                    playlist: youtubeVideoId,
+                    controls: 0,
+                    showinfo: 0,
+                    modestbranding: 1,
+                    fs: 0,
+                    cc_load_policy: 0,
+                    iv_load_policy: 3
+                },
+                events: {
+                    onReady: function(event) {
+                        event.target.setVolume(30);
+                    }
+                }
+            });
+        }
 
         // Funciones interactivas
         function toggleMusic() {
-            const music = document.getElementById('backgroundMusic');
             const btn = document.getElementById('musicBtn');
-            if (music.paused) {
-                music.play();
-                btn.innerHTML = '<i class="fas fa-pause"></i>';
+            
+            if (player && player.getPlayerState) {
+                if (player.getPlayerState() === YT.PlayerState.PLAYING) {
+                    player.pauseVideo();
+                    btn.innerHTML = '<i class="fas fa-music"></i>';
+                } else {
+                    player.playVideo();
+                    btn.innerHTML = '<i class="fas fa-pause"></i>';
+                    musicStarted = true;
+                }
             } else {
-                music.pause();
-                btn.innerHTML = '<i class="fas fa-music"></i>';
+                // Fallback a audio normal
+                const music = document.getElementById('backgroundMusic');
+                if (music.paused) {
+                    music.play().then(() => {
+                        btn.innerHTML = '<i class="fas fa-pause"></i>';
+                        musicStarted = true;
+                    }).catch(() => {});
+                } else {
+                    music.pause();
+                    btn.innerHTML = '<i class="fas fa-music"></i>';
+                }
             }
         }
 
@@ -1273,7 +1316,7 @@
                         <i class="fas fa-church" style="font-size: 3rem; color: var(--honey-yellow);"></i>
                     </div>
                     <p><strong>📅 Fecha:</strong> 13 de Diciembre, 2025</p>
-                    <p><strong>🕐 Hora:</strong> 12:00 PM</p>
+                    <p><strong>🕐 Hora:</strong> 1:00 PM</p>
                     <p><strong>📍 Dirección:</strong> Av. Principal #123, Centro</p>
                     <p><strong>ℹ️ Información:</strong> Ceremonia religiosa del bautizo</p>
                 `;
@@ -1299,7 +1342,7 @@
         // Contador regresivo
         function startCountdown() {
             function updateCountdown() {
-                const targetDate = new Date('2025-12-13T12:00:00');
+                const targetDate = new Date('2025-12-13T13:00:00');
                 const now = new Date();
                 const diff = targetDate - now;
 
@@ -1359,11 +1402,20 @@
         document.addEventListener('DOMContentLoaded', function() {
             startCountdown();
             
-            // Intentar reproducir música inmediatamente
-            setTimeout(startMusic, 500);
-            
-            // También intentar al hacer clic
-            document.addEventListener('click', startMusic, { once: true });
+            // Reproducir música al primer clic
+            document.addEventListener('click', function() {
+                if (!musicStarted) {
+                    setTimeout(() => {
+                        if (player && player.playVideo) {
+                            player.playVideo();
+                            document.getElementById('musicBtn').innerHTML = '<i class="fas fa-pause"></i>';
+                            musicStarted = true;
+                        } else {
+                            toggleMusic();
+                        }
+                    }, 500);
+                }
+            }, { once: true });
         });
     </script>
 </body>
