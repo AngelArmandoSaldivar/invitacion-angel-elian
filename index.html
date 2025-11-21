@@ -681,7 +681,7 @@
 <body class="bee-bg">
     <!-- Música de fondo -->
     <div id="youtube-player" style="position: absolute; top: -9999px; left: -9999px;"></div>
-    <audio id="backgroundMusic" loop style="display: none;">
+    <audio id="backgroundMusic" loop autoplay muted>
         <source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mpeg">
     </audio>
     
@@ -1398,24 +1398,50 @@
             }, 5000);
         }
 
+        // Autoplay agresivo
+        function attemptAutoplay() {
+            const music = document.getElementById('backgroundMusic');
+            const musicBtn = document.getElementById('musicBtn');
+            
+            // Intentar con YouTube primero
+            if (player && player.playVideo && !musicStarted) {
+                try {
+                    player.playVideo();
+                    musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    musicStarted = true;
+                    return true;
+                } catch (e) {}
+            }
+            
+            // Intentar con audio HTML5
+            if (!musicStarted) {
+                music.muted = false;
+                music.play().then(() => {
+                    musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    musicStarted = true;
+                }).catch(() => {
+                    // Si falla, intentar con interacción del usuario
+                    document.addEventListener('click', function() {
+                        if (!musicStarted) {
+                            music.play().then(() => {
+                                musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                                musicStarted = true;
+                            }).catch(() => {});
+                        }
+                    }, { once: true });
+                });
+            }
+        }
+        
         // Inicialización
         document.addEventListener('DOMContentLoaded', function() {
             startCountdown();
             
-            // Reproducir música al primer clic
-            document.addEventListener('click', function() {
-                if (!musicStarted) {
-                    setTimeout(() => {
-                        if (player && player.playVideo) {
-                            player.playVideo();
-                            document.getElementById('musicBtn').innerHTML = '<i class="fas fa-pause"></i>';
-                            musicStarted = true;
-                        } else {
-                            toggleMusic();
-                        }
-                    }, 500);
-                }
-            }, { once: true });
+            // Múltiples intentos de autoplay
+            setTimeout(attemptAutoplay, 100);
+            setTimeout(attemptAutoplay, 500);
+            setTimeout(attemptAutoplay, 1000);
+            setTimeout(attemptAutoplay, 2000);
         });
     </script>
 </body>
