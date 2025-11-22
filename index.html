@@ -147,18 +147,32 @@
         }
         
         .evento-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            background: linear-gradient(135deg, #fff 0%, #fffbf0 100%);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(255, 193, 7, 0.15);
             margin-bottom: 2rem;
-            transition: all 0.3s ease;
-            border-left: 5px solid var(--honey-yellow);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .evento-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--honey-yellow), var(--honey-dark), var(--honey-yellow));
         }
         
         .evento-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(255, 193, 7, 0.25);
+            border-color: var(--honey-yellow);
         }
         
         .evento-icon {
@@ -886,37 +900,31 @@
         <div class="container">
             <h2 class="section-title text-center mb-5">Información Importante</h2>
             
-            <div class="details-grid">
-                <div class="detail-item">
-                    <div class="detail-icon">
-                        <i class="fas fa-gift"></i>
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="evento-card text-center">
+                        <div class="evento-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3 class="evento-title">🎁 Regalos</h3>
+                        <div class="evento-details">
+                            <p style="font-size: 1.1rem; line-height: 1.6;">Tu presencia es nuestro mejor regalo 💝</p>
+                            <p style="font-size: 0.95rem; color: #666;">Si deseas obsequiar algo especial, será recibido con mucho amor y gratitud</p>
+                        </div>
                     </div>
-                    <h4>Regalos</h4>
-                    <p>Tu presencia es nuestro mejor regalo. Si deseas obsequiar algo, será muy apreciado.</p>
                 </div>
                 
-                <div class="detail-item">
-                    <div class="detail-icon">
-                        <i class="fas fa-tshirt"></i>
+                <div class="col-md-5">
+                    <div class="evento-card text-center">
+                        <div class="evento-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3 class="evento-title">👗 Vestimenta</h3>
+                        <div class="evento-details">
+                            <p style="font-size: 1.1rem; line-height: 1.6;">Elegante casual 🌟</p>
+                            <p style="font-size: 0.95rem; color: #666;">Colores amarillo y blanco son perfectos para la temática de nuestra abejita</p>
+                        </div>
                     </div>
-                    <h4>Vestimenta</h4>
-                    <p>Código: Elegante casual. Colores amarillo y blanco son bienvenidos.</p>
-                </div>
-                
-                <div class="detail-item">
-                    <div class="detail-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <h4>Fotos</h4>
-                    <p>Captura los momentos especiales. Comparte con #AbejitaComunion</p>
-                </div>
-                
-                <div class="detail-item">
-                    <div class="detail-icon">
-                        <i class="fas fa-child"></i>
-                    </div>
-                    <h4>Para los Niños</h4>
-                    <p>Habrá área especial con juegos y actividades para los más pequeños.</p>
                 </div>
             </div>
         </div>
@@ -1293,7 +1301,7 @@
         let countdownTimer;
         let musicStarted = false;
         let player;
-        let youtubeVideoId = 'Bya-v3tww7o';
+        let youtubeVideoId = 'dQw4w9WgXcQ';
         
         // API de YouTube
         function onYouTubeIframeAPIReady() {
